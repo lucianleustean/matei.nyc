@@ -1,0 +1,11 @@
+<header>
+  <div class="container">
+    <h1> Matei Curtasu </h1>
+
+    <ul class="navigation">
+      <% data.projects.each do |k, h| %>
+        <li id="<%= h.id %>"> <%= h.company %> - <i><%= h.project %></i></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
