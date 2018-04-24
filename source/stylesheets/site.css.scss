@@ -1,6 +1,26 @@
 @charset "utf-8";
 @import "normalize";
 
+@font-face {
+  font-family: 'SangBleuEmpire';
+  src: url('../fonts/SangBleuEmpire-Bold-WebM.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/SangBleuEmpire-Bold-WebM.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/SangBleuEmpire-Bold-WebM.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/SangBleuEmpire-Bold-WebM.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/SangBleuEmpire-Bold-WebM.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SangBleuEmpire-Bold-WebM.svg#svgFontName') format('svg'); /* Legacy iOS */
+
+}
+
+@font-face {
+  font-family: 'SangBleuKingdom';
+  src: url('../fonts/SangBleuKingdom-RegularItalic-WebM.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/SangBleuKingdom-RegularItalic-WebM.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/SangBleuKingdom-RegularItalic-WebM.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/SangBleuKingdom-RegularItalic-WebM.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/SangBleuKingdom-RegularItalic-WebM.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SangBleuKingdom-RegularItalic-WebM.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
 
 // Colors
 $brand-primary: black;
@@ -10,7 +30,8 @@ $font-color: white;
 $font-size: 18px;
 
 // Typography
-$font: "Fira Mono", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font: "SangBleuEmpire", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-italic: "SangBleuKingdom", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // Base styles / reset
 * {
@@ -37,7 +58,6 @@ ul {
   }
 }
 
-.container {
-  width: 20em;
-  margin: auto;
+.font-italic {
+  font-family: $font-italic;
 }
