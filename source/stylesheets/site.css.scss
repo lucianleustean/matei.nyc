@@ -33,6 +33,10 @@ $font-size: 18px;
 $font: "SangBleuEmpire", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-italic: "SangBleuKingdom", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+$image-height: calc(100vw*600/2880);
+$height-offset: calc(-100vw*600/2880 - 1em);
+$project-container-height: calc(100vw*600/2880 + 5.5em);
+
 // Base styles / reset
 * {
   margin: 0;
@@ -43,21 +47,132 @@ $font-italic: "SangBleuKingdom", "Lato", "Helvetica Neue", Helvetica, Arial, san
 body {
   font-family: $font;
   font-size: $font-size;
-  line-height: 1em;
   background-color: $brand-primary-dark;
   color: $font-color;
   text-align: center;
 }
 
 ul {
-  padding: 2em 0;
   list-style: none;
 
   li {
-    padding: .5em 0;
+    background: black;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
   }
 }
 
 .font-italic {
   font-family: $font-italic;
+}
+
+.project {
+  position: relative;
+  width: 100%;
+  background-color: black;
+
+  &:not(.active) {
+    height: 2.5em;
+    transition: all .7s ease-out;
+  }
+
+  &.active {
+    height: $project-container-height;
+    transition: all .7s ease-out;
+
+    .description {
+      padding: 1em;
+    }
+  }
+
+  .list-inner-text {
+    z-index: 1100;
+    position: relative;
+    background: black;
+    padding: .3em 0;
+    cursor: pointer;
+    line-height: 2;
+  }
+
+  .project-details {
+    width: 100%;
+    z-index: 1000;
+    position: absolute;
+
+    &:not(.hide) {
+      top: 2em;
+      transition: all .7s ease-out;
+    }
+
+    &.hide {
+      top: $height-offset;
+      transition: all .7s ease-out;
+    }
+
+    .description {
+      line-height: 2.5;
+      font-size: .8em;
+    }
+
+    .media {
+      height: $image-height;
+      background-size: cover;
+    }
+  }
+}
+
+#matei {
+  z-index: 1011;
+  .media { background-image: url("/images/00_matei.jpg"); }
+}
+
+#hornbach {
+  z-index: 1010;
+  .media { background-image: url("/images/01_hornbach.jpg"); }
+}
+
+#google {
+  z-index: 1009;
+  .media { background-image: url("/images/02_google.jpg"); }
+}
+
+#nike {
+  z-index: 1008;
+  .media { background-image: url("/images/03_nike.jpg"); }
+}
+
+#att {
+  z-index: 1007;
+  .media { background-image: url("/images/04_at&t.jpg"); }
+}
+
+#fanta {
+  z-index: 1006;
+  .media { background-image: url("/images/05_fanta.jpg"); }
+}
+
+#adidas {
+  z-index: 1005;
+  .media { background-image: url("/images/06_adidas.jpg"); }
+}
+
+#cnn {
+  z-index: 1004;
+  .media { background-image: url("/images/07_cnn.jpg"); }
+}
+
+#frf {
+  z-index: 1003;
+  .media { background-image: url("/images/08_frf.jpg"); }
+}
+
+#havas {
+  z-index: 1002;
+  .media { background-image: url("/images/09_havas.jpg"); }
+}
+
+#jager {
+  z-index: 1001;
+  .media { background-image: url("/images/10_jager.jpg"); }
 }

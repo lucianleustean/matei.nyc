@@ -1,0 +1,25 @@
+<div class="container">
+  <ul class="navigation">
+    <li id="matei" class="project">
+      <div class="list-inner-text">
+        <span>Matei</span> <span class="font-italic">Curtasu</span>
+      </div>
+      <div class="project-details hide">
+        <div class="description font-italic"> Lorem ipsum </div>
+        <div class="media"></div>
+      </div>
+    </li>
+
+    <% data.projects.to_a.sort_by{ |id, e| id }.each do |index, project| %>
+      <li id="<%= project.id %>" class="project">
+        <div class="list-inner-text">
+          <span><%= project.company %></span> – <span class="font-italic"><%= project.project %></span>
+        </div>
+        <div class="project-details hide">
+          <div class="description font-italic"> <%= project.description %> </div>
+          <div class="media"></div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
