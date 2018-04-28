@@ -37,6 +37,11 @@ $image-height: calc(100vw*600/2880);
 $height-offset: calc(-100vw*600/2880 - 1em);
 $project-container-height: calc(100vw*600/2880 + 5.5em);
 
+$video-height: calc(100vw*600/2880*0.8);
+$video-width: calc(100vw*600/2880*560/315*0.8);
+$video-margin: calc(100vw*600/2880*0.1);
+
+
 // Base styles / reset
 * {
   margin: 0;
@@ -118,6 +123,12 @@ ul {
     .media {
       height: $image-height;
       background-size: cover;
+
+      iframe {
+        margin-top: $video-margin;
+        height: $video-height;
+        width: $video-width;
+      }
     }
   }
 }
