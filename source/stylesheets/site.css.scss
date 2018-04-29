@@ -37,6 +37,9 @@ $image-height: calc(100vw*600/2880);
 $height-offset: calc(-100vw*600/2880 - 1em);
 $project-container-height: calc(100vw*600/2880 + 5.5em);
 
+$height-offset-first-elem: calc(-100vw*600/2880 - 2em);
+$project-container-height-first-elem: calc(100vw*600/2880 + 9.5em);
+
 $video-height: calc(100vw*600/2880*0.8);
 $video-width: calc(100vw*600/2880*560/315*0.8);
 $video-margin: calc(100vw*600/2880*0.1);
@@ -85,10 +88,15 @@ ul {
   &.active {
     height: $project-container-height;
     transition: all .7s ease-out;
+  }
 
-    .description {
-      padding: 1em;
-    }
+  &:first-child {
+    height: 10em;
+
+    .list-inner-text { padding-top: 7em; }
+    &.active { height: $project-container-height-first-elem; }
+    .project-details:not(.hide) { top: 7em; }
+    .project-details.hide { top: $height-offset-first-elem; }
   }
 
   .list-inner-text {
