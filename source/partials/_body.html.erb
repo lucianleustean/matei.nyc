@@ -18,7 +18,7 @@
         <div class="project-details hide">
           <div class="description font-italic"> <%= project.description %> </div>
           <div class="media">
-            <iframe src="<%= project.video_url %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="youtube" id="<%= project.videoId %>" data-name="<%= project.id %>" data-params="modestbranding=1&showinfo=0&controls=0&vq=hd720"></div>
           </div>
         </div>
       </li>

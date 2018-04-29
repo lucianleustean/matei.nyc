@@ -131,7 +131,21 @@ ul {
     .media {
       height: $image-height;
       background-size: cover;
+      position: relative;
 
+      .youtube {
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        background-size: cover;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+      }
+
+      .youtube,
       iframe {
         margin-top: $video-margin;
         height: $video-height;
@@ -143,55 +157,55 @@ ul {
 
 #matei {
   z-index: 1011;
-  .media { background-image: url("/images/00_matei.jpg"); }
+  .media { background-image: url("/images/matei.jpg"); }
 }
 
 #hornbach {
   z-index: 1010;
-  .media { background-image: url("/images/01_hornbach.jpg"); }
+  .media { background-image: url("/images/hornbach.jpg"); }
 }
 
 #google {
   z-index: 1009;
-  .media { background-image: url("/images/02_google.jpg"); }
+  .media { background-image: url("/images/google.jpg"); }
 }
 
 #nike {
   z-index: 1008;
-  .media { background-image: url("/images/03_nike.jpg"); }
+  .media { background-image: url("/images/nike.jpg"); }
 }
 
 #att {
   z-index: 1007;
-  .media { background-image: url("/images/04_at&t.jpg"); }
+  .media { background-image: url("/images/att.jpg"); }
 }
 
 #fanta {
   z-index: 1006;
-  .media { background-image: url("/images/05_fanta.jpg"); }
+  .media { background-image: url("/images/fanta.jpg"); }
 }
 
 #adidas {
   z-index: 1005;
-  .media { background-image: url("/images/06_adidas.jpg"); }
+  .media { background-image: url("/images/adidas.jpg"); }
 }
 
 #cnn {
   z-index: 1004;
-  .media { background-image: url("/images/07_cnn.jpg"); }
+  .media { background-image: url("/images/cnn.jpg"); }
 }
 
 #frf {
   z-index: 1003;
-  .media { background-image: url("/images/08_frf.jpg"); }
+  .media { background-image: url("/images/frf.jpg"); }
 }
 
 #havas {
   z-index: 1002;
-  .media { background-image: url("/images/09_havas.jpg"); }
+  .media { background-image: url("/images/havas.jpg"); }
 }
 
 #jager {
   z-index: 1001;
-  .media { background-image: url("/images/10_jager.jpg"); }
+  .media { background-image: url("/images/jager.jpg"); }
 }
