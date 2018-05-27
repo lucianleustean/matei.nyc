@@ -1,24 +1,264 @@
+@charset "utf-8";
+@import "normalize";
+
+@font-face {
+  font-family: 'SangBleuEmpire';
+  src: url('../fonts/SangBleuEmpire-Bold-WebM.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/SangBleuEmpire-Bold-WebM.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/SangBleuEmpire-Bold-WebM.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/SangBleuEmpire-Bold-WebM.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/SangBleuEmpire-Bold-WebM.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SangBleuEmpire-Bold-WebM.svg#svgFontName') format('svg'); /* Legacy iOS */
+
+}
+
+@font-face {
+  font-family: 'SangBleuKingdom';
+  src: url('../fonts/SangBleuKingdom-RegularItalic-WebM.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/SangBleuKingdom-RegularItalic-WebM.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/SangBleuKingdom-RegularItalic-WebM.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/SangBleuKingdom-RegularItalic-WebM.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/SangBleuKingdom-RegularItalic-WebM.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/SangBleuKingdom-RegularItalic-WebM.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+// Colors
+$brand-primary: black;
+$brand-primary-dark: black;
+
+$font-color: white;
+$font-size: 18px;
+
+// Typography
+$font: "SangBleuEmpire", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-italic: "SangBleuKingdom", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$image-height: calc(100vw*600/2880);
+$height-offset: calc(-100vw*600/2880 - 1em);
+$project-container-height: calc(100vw*600/2880 + 5.5em);
+
+$height-offset-first-elem: calc(-100vw*600/2880 - 4em);
+$project-container-height-first-elem: calc(100vw*600/2880 + 12.5em);
+
+$video-height: calc(100vw*600/2880*0.8);
+$video-width: calc(100vw*600/2880*560/315*0.8);
+$video-margin: calc(100vw*600/2880*0.1);
+
+
+// Base styles / reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #fbc547;
-  color: #333;
-  font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
-    "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
-    "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
-    "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-  padding: 18vh 1rem;
+  font-family: $font;
+  font-size: $font-size;
+  background-color: $brand-primary-dark;
+  color: $font-color;
   text-align: center;
 }
 
-a {
-  color: rgba(#000, 0.7);
+ul {
+  list-style: none;
 
-  &:focus,
-  &:hover {
-    color: rgba(#000, 0.6);
+  li {
+    background: black;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
   }
 }
 
-.middleman-logo {
-  margin-bottom: 1rem;
-  width: 10rem;
+.font-italic {
+  font-family: $font-italic;
+}
+
+.project {
+  position: relative;
+  width: 100%;
+  background-color: black;
+
+  &:not(.active) {
+    height: 2.5em;
+    transition: all .7s ease-out;
+  }
+
+  &.active {
+    height: $project-container-height;
+    transition: all .7s ease-out;
+  }
+
+  &:first-child {
+    height: 12em;
+
+    .list-inner-text { padding-top: 8em; }
+    &.active { height: $project-container-height-first-elem; }
+    .project-details:not(.hide) { top: 10em; }
+    .project-details.hide { top: $height-offset-first-elem; }
+  }
+
+  .list-inner-text {
+    z-index: 1100;
+    position: relative;
+    background: black;
+    padding: .3em 0;
+    cursor: pointer;
+    line-height: 2;
+  }
+
+  .project-details {
+    width: 100%;
+    z-index: 1000;
+    position: absolute;
+
+    &:not(.hide) {
+      top: 2em;
+      transition: all .7s ease-out;
+    }
+
+    &.hide {
+      top: $height-offset;
+      transition: all .7s ease-out;
+    }
+
+    .description {
+      line-height: 2.5;
+      font-size: .8em;
+    }
+
+    .media {
+      height: $image-height;
+      background-size: cover;
+      position: relative;
+
+      .youtube {
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        background-size: cover;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+      }
+
+      .youtube,
+      iframe {
+        margin-top: $video-margin;
+        height: $video-height;
+        width: $video-width;
+      }
+    }
+  }
+
+  .presentation {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .presentation-tab {
+    display: inline-block;
+    text-align: left;
+    font-size: .8em;
+    margin-top: 1em;
+    padding: 1em;
+
+    h3 {
+      background-color: black;
+      margin: 1em 0;
+      padding: .3em;
+    }
+
+    li {
+      padding: .3em;
+    }
+
+    a {
+     color: white;
+     text-decoration: none;
+    }
+  }
+}
+
+#matei {
+  z-index: 1011;
+  .media { background-image: url("/images/matei.jpg"); }
+}
+
+#hornbach {
+  z-index: 1010;
+  .media { background-image: url("/images/hornbach.jpg"); }
+}
+
+#google {
+  z-index: 1009;
+  .media { background-image: url("/images/google.jpg"); }
+}
+
+#nike {
+  z-index: 1008;
+  .media { background-image: url("/images/nike.jpg"); }
+}
+
+#att {
+  z-index: 1007;
+  .media { background-image: url("/images/att.jpg"); }
+}
+
+#fanta {
+  z-index: 1006;
+  .media { background-image: url("/images/fanta.jpg"); }
+}
+
+#adidas {
+  z-index: 1005;
+  .media { background-image: url("/images/adidas.jpg"); }
+}
+
+#cnn {
+  z-index: 1004;
+  .media { background-image: url("/images/cnn.jpg"); }
+}
+
+#frf {
+  z-index: 1003;
+  .media { background-image: url("/images/frf.jpg"); }
+}
+
+#havas {
+  z-index: 1002;
+  .media { background-image: url("/images/havas.jpg"); }
+}
+
+#jager {
+  z-index: 1001;
+  .media { background-image: url("/images/jager.jpg"); }
+}
+
+@media screen and (max-width: 1150px) {
+  .project .presentation-tab { font-size: .6em; }
+}
+
+@media screen and (max-width: 870px) {
+  .project .presentation-tab { font-size: .5em; }
+}
+
+@media screen and (max-width: 740px) {
+  .project .presentation-tab { font-size: .4em; }
+}
+
+@media screen and (max-width: 590px) {
+  .project .presentation-tab { font-size: .3em; }
+  .project .list-inner-text { font-size: .9em; }
+  .project .project-details .description { font-size: .6em; }
+}
+
+@media screen and (max-width: 440px) {
+  .project .presentation-tab { font-size: .2em; }
 }
