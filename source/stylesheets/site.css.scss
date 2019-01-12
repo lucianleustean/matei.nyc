@@ -236,11 +236,6 @@ ul {
   .media { background-image: url("/images/havas.jpg"); }
 }
 
-#jager {
-  z-index: 1001;
-  .media { background-image: url("/images/jager.jpg"); }
-}
-
 @media screen and (max-width: 1150px) {
   .project .presentation-tab { font-size: .6em; }
 }
