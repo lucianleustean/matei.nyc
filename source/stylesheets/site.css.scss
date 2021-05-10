@@ -201,34 +201,34 @@ ul {
   .media { background-image: url("/images/hornbach.jpg"); }
 }
 
-#mercedes-y {
+#netflix {
   z-index: 997;
+  .media { background-image: url("/images/netflix.jpg"); }
+}
+
+#mercedes-y {
+  z-index: 996;
   .media { background-image: url("/images/mercedes-y.jpg"); }
 }
 
-#google {
-  z-index: 996;
-  .media { background-image: url("/images/google.jpg"); }
+#google-stadia {
+  z-index: 995;
+  .media { background-image: url("/images/google-stadia.jpg"); }
+}
+
+#google-escape {
+  z-index: 994;
+  .media { background-image: url("/images/google-escape.jpg"); }
 }
 
 #nike {
-  z-index: 995;
+  z-index: 993;
   .media { background-image: url("/images/nike.jpg"); }
 }
 
-#att {
-  z-index: 994;
-  .media { background-image: url("/images/att.jpg"); }
-}
-
 #fanta {
-  z-index: 993;
-  .media { background-image: url("/images/fanta.jpg"); }
-}
-
-#adidas {
   z-index: 992;
-  .media { background-image: url("/images/adidas.jpg"); }
+  .media { background-image: url("/images/fanta.jpg"); }
 }
 
 #cnn {
@@ -236,9 +236,9 @@ ul {
   .media { background-image: url("/images/cnn.jpg"); }
 }
 
-#frf {
+#stefanini {
   z-index: 990;
-  .media { background-image: url("/images/frf.jpg"); }
+  .media { background-image: url("/images/stefanini.jpg"); }
 }
 
 #havas {
